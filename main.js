@@ -6,7 +6,7 @@ const serviceBlockGenerator = (item) => {
 
     // create a div class for a service
     const serviceBlock = document.createElement('div');
-    serviceBlock.setAttribute('class', 'service-block');
+    serviceBlock.setAttribute('class', 'service-block item');
 
     // Creating content i.e children for the service block div
     const h3 = document.createElement('h3');
@@ -51,21 +51,18 @@ serviceRulesLinker = (included) => {
 };
 
 
-
 const fetchData = async () => {
     let response = await fetch('https://us-west-2.cloudconformity.com/v1/services');
     let object = await response.json();
-
-    object.data.map(item => {
+    const sortedData = object.data.sort((a, b) => (a.attributes.name > b.attributes.name) ? 1 : -1);
+    console.log(sortedData);
+    sortedData.map(item => {
         serviceBlockGenerator(item);
     });
 
     serviceRulesLinker(object.included);
-
-
 }
-
 
 fetchData();
 
-
+// Grid Resizing

@@ -78,6 +78,31 @@ body {
 .intro p {
     color: #3E2559;
 }
-
-
 /* Intro End */
+/* Rules listing Start */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50px 200px;
+}
+
+.grid-section .grid {
+    column-count: 2;
+    column-gap: 70px;
+}
+
+.grid .item h3 {
+    font-size: 32px;
+    color: #3E2559;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.grid .item ul {
+    list-style-type: none;
+    color: #6B7C94;
+    font-size: 16px;
+    text-decoration: underline;
+    line-height: 25px;
+}
+
