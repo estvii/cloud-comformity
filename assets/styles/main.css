@@ -104,5 +104,98 @@ body {
     font-size: 16px;
     text-decoration: underline;
     line-height: 25px;
+    cursor: pointer;
 }
 
+/* Horizontal Line */
+.horizontal-line {
+    margin: 100px 0;
+}
+
+/* Rules Listing 2 */
+.grid2 .item h3 {
+    font-size: 32px;
+    color: #3E2559;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.grid2 .item ul {
+    list-style-type: none;
+    color: #6B7C94;
+    font-size: 16px;
+    text-decoration: underline;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+/* Footer Info Section */
+.footer-info {
+    text-align: center;
+    padding: 120px;
+}
+
+.footer-info p {
+    margin: 50px 125px;
+    color: #6B7C94;
+}
+
+.footer-info .free-trial-btn {
+    background-color: #C6366E;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.footer-info .free-trial-btn:hover {
+    background-color: #191D32;    
+}
+
+/* Footer */
+.footer {
+    padding: 50px 120px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 200px 150px 150px auto;
+    grid-template-areas: 
+        "aws product company address-social"
+}
+
+.footer img {
+    grid-area: aws;
+}
+
+.footer .product {
+    grid-area: product;
+    list-style-type: none;
+    color: #6B7C94;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.footer .company {
+    grid-area: company;
+    list-style-type: none;
+    color: #6B7C94;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.footer .address-social {
+    grid-area: address-social;
+    text-align: right;
+    font-size: 14px;
+    color: #6B7C84;
+}
+
+.footer .address-social .social .fab {
+    padding-right: 20px;
+}
