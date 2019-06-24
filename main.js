@@ -1,7 +1,6 @@
-const serviceBlocks = document.getElementById('service-blocks');
-const serviceBlocks2 = document.getElementById('service-blocks2');
-
 const serviceBlockGenerator = (item) => {
+    const serviceBlocks = document.getElementById('service-blocks');
+    const serviceBlocks2 = document.getElementById('service-blocks2');
     const rules = item.relationships.rules.data
 
     // create a div class for a service
@@ -55,8 +54,9 @@ const fetchData = async () => {
     let response = await fetch('https://us-west-2.cloudconformity.com/v1/services');
     let object = await response.json();
     const sortedData = object.data.sort((a, b) => (a.attributes.name > b.attributes.name) ? 1 : -1);
-    console.log(sortedData);
+    // console.log(sortedData);
     sortedData.map(item => {
+        console.log(item);
         serviceBlockGenerator(item);
     });
 
@@ -65,4 +65,8 @@ const fetchData = async () => {
 
 fetchData();
 
-// Grid Resizing
+module.exports = {
+    fetchData,
+    serviceBlockGenerator,
+    serviceRulesLinker
+}
