@@ -12,6 +12,9 @@ git clone https://github.com/estvii/cloud-comformity
 cd cloud-comformity
 npm install
 open index.html
+
+For Testing please run below: 
+npm test
 ```
 
 ### Modules used
