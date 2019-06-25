@@ -13,6 +13,25 @@
 body {
     background-color: var(--color-white);
 }
+
+/* Navbar trial button start */
+#myNavbar ul li .free-trial-btn {
+    background-color: #C6366E;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: -10px 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+/* Navbar trial button end */
+
 /* Banner CSS Start*/
 .article {
     background: linear-gradient(rgba(141,100,165,0.8), rgba(141, 100, 165,0.8)),url('../images//banner.jpg');
