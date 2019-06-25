@@ -30,11 +30,9 @@ const serviceBlockGenerator = (item) => {
     } else {
         serviceBlocks.appendChild(serviceBlock);
     }
-
-
 };
 
-serviceRulesLinker = (included) => {
+const serviceRulesLinker = (included) => {
 
     const all_lis = document.getElementsByTagName('li');
 
@@ -56,7 +54,7 @@ const fetchData = async () => {
     const sortedData = object.data.sort((a, b) => (a.attributes.name > b.attributes.name) ? 1 : -1);
     // console.log(sortedData);
     sortedData.map(item => {
-        console.log(item);
+        // console.log(item);
         serviceBlockGenerator(item);
     });
 
@@ -64,9 +62,3 @@ const fetchData = async () => {
 }
 
 fetchData();
-
-module.exports = {
-    fetchData,
-    serviceBlockGenerator,
-    serviceRulesLinker
-}
