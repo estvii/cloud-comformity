@@ -110,20 +110,21 @@ body {
     column-gap: 70px;
 }
 
-.grid .item h3 {
+.grid .item h3 a {
     font-size: 32px;
     color: #3E2559;
     text-decoration: underline;
-    cursor: pointer;
 }
 
 .grid .item ul {
     list-style-type: none;
-    color: #6B7C94;
     font-size: 16px;
     text-decoration: underline;
     line-height: 25px;
-    cursor: pointer;
+}
+
+.grid .item ul li a {
+    color: #6B7C94;
 }
 
 /* Horizontal Line */
@@ -132,20 +133,21 @@ body {
 }
 
 /* Rules Listing 2 */
-.grid2 .item h3 {
+.grid2 .item h3 a {
     font-size: 32px;
     color: #3E2559;
     text-decoration: underline;
-    cursor: pointer;
 }
 
-.grid2 .item ul {
+.grid2 .item ul{
     list-style-type: none;
-    color: #6B7C94;
     font-size: 16px;
     text-decoration: underline;
     line-height: 25px;
-    cursor: pointer;
+}
+
+.grid2 .item ul li a {
+    color: #6B7C94;
 }
 
 /* Footer Info Section */
@@ -212,6 +214,10 @@ body {
     grid-area: address-social;
     text-align: right;
     font-size: 14px;
+    color: #6B7C84;
+}
+
+.footer .address-social .legal a {
     color: #6B7C84;
 }
 
