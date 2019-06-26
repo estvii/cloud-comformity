@@ -5,11 +5,17 @@ const serviceBlockGenerator = (item) => {
 
     // create a div class for a service
     const serviceBlock = document.createElement('div');
-    serviceBlock.setAttribute('class', 'service-block item');
+    serviceBlock.setAttribute('class', `service-block item ${item.attributes.name}`);
 
     // Creating content i.e children for the service block div
+
+    // Creating header <h3>
     const h3 = document.createElement('h3');
-    h3.textContent = item.attributes.name;
+    // Creating <a> and appending to <h3>
+    const anchor = document.createElement('A');
+    anchor.href = `https://www.cloudconformity.com/conformity-rules/${item.attributes.name}`;
+    anchor.innerHTML = item.attributes.name;
+    h3.appendChild(anchor);
 
     // looping through the array of rules and appending it to the ul div
     const ul = document.createElement('ul')
@@ -25,7 +31,7 @@ const serviceBlockGenerator = (item) => {
 
     // Attach the service-block div to the parent  div service blocks
     // Check if service title is Budgets, then appends it to a different div
-    if (serviceBlock.childNodes[0].innerHTML == 'Budgets') {
+    if (serviceBlock.childNodes[0].innerText == 'Budgets') {
         serviceBlocks2.appendChild(serviceBlock);
     } else {
         serviceBlocks.appendChild(serviceBlock);
@@ -35,13 +41,20 @@ const serviceBlockGenerator = (item) => {
 const serviceRulesLinker = (included) => {
 
     const all_lis = document.getElementsByTagName('li');
-
+    // debugger;
     // looping through existing rules on page and overwriting them with included datas
     for (let li of all_lis) {
         included.map((item) => {
             if (li.innerHTML === item.id) {
                 // console.log('matched'); should match 510 times because theres 510 rules
-                li.innerHTML = item.attributes.title
+                // li.innerHTML = item.attributes.title
+                // create <a> and append to <li>
+                li.innerHTML = '';
+                hrefLink = li.parentElement.previousSibling.firstElementChild.href;
+                const anchor = document.createElement('A');
+                anchor.href = `${hrefLink}/${item.attributes.slug}.html`;
+                anchor.innerHTML = item.attributes.title;
+                li.appendChild(anchor);
             }
         })
     }
